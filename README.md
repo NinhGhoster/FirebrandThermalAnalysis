@@ -47,6 +47,25 @@ pip install pyinstaller
 ```
 Optional: set `FLIR_SDK_LIB_DIR`/`FLIR_SDK_BIN_DIR` to bundle SDK DLLs.
 
+## Package Installers
+
+### macOS (DMG)
+```bash
+./build/package_macos_dmg.sh
+```
+
+### Windows (Installer)
+Install Inno Setup, then run:
+```powershell
+.\build\package_windows.ps1
+```
+
+### Linux (AppImage)
+Install `appimagetool`, then run:
+```bash
+./build/package_linux_appimage.sh
+```
+
 ## Export Notes
 - Start/end are 1-based frame numbers.
 - End accepts `max` to use each file’s full length.
