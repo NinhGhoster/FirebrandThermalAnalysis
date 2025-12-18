@@ -59,9 +59,10 @@ conda env update -f environment.yml --prune
 - ROI updates apply to the current file or all files via Apply to `<file>` / Apply all.
 
 ### Export actions
-- **Save frame image (JPG)** saves `basename_frame_00001.jpg` next to the SEQ.
-- **Export CSV (current)** saves `basename.csv` next to the SEQ.
-- **Export CSV (all files)** exports all loaded SEQs with shared settings.
+- Single **Export...** button opens a menu:
+  - **Export CSV (current)**: saves `basename.csv` next to the SEQ.
+  - **Export CSV (all files)**: exports all loaded SEQs with shared settings.
+  - **Save frame image (JPG)**: saves `basename_frame_00001.jpg` with overlays next to the SEQ.
 
 ## How it works
 1) Load SEQ  

@@ -97,7 +97,7 @@ class SKDDashboard(tk.Tk):
         self.btn_open.pack(side=tk.LEFT, expand=True, fill=tk.X, padx=1)
         ttk.Button(file_row, text="<<", command=self.on_prev_file).pack(side=tk.LEFT, expand=True, fill=tk.X, padx=1)
         ttk.Button(file_row, text=">>", command=self.on_next_file).pack(side=tk.LEFT, expand=True, fill=tk.X, padx=1)
-        self.lbl_file = ttk.Label(file_frame, text="Data source: none", wraplength=280)
+        self.lbl_file = ttk.Label(file_frame, text="(none)", wraplength=280)
         self.lbl_file.pack(anchor=tk.W, pady=(4, 2))
 
         # Playback
@@ -109,7 +109,7 @@ class SKDDashboard(tk.Tk):
         self.btn_play.pack(side=tk.LEFT, padx=1, fill=tk.X, expand=True)
         self.btn_prev = ttk.Button(playback, text="<", command=self.on_prev)
         self.btn_prev.pack(side=tk.LEFT, padx=1, fill=tk.X, expand=True)
-        self.btn_next = ttk.Button(playback, text=">>", command=self.on_next)
+        self.btn_next = ttk.Button(playback, text=">", command=self.on_next)
         self.btn_next.pack(side=tk.LEFT, padx=1, fill=tk.X, expand=True)
 
         # Export settings
@@ -205,14 +205,10 @@ class SKDDashboard(tk.Tk):
         self._update_apply_labels()
 
         # Export actions
-        export_frame = ttk.LabelFrame(sidebar, text="Export actions")
+        export_frame = ttk.LabelFrame(sidebar, text="Export")
         export_frame.pack(fill=tk.X, pady=6)
-        self.btn_export_csv = ttk.Button(export_frame, text="Export CSV (current)", command=self.export_video_csv)
-        self.btn_export_csv.pack(fill=tk.X, pady=2)
-        self.btn_export_csv_all = ttk.Button(export_frame, text="Export CSV (all files)", command=self.export_video_csv_all)
-        self.btn_export_csv_all.pack(fill=tk.X, pady=2)
-        self.btn_export = ttk.Button(export_frame, text="Save frame image (JPG)", command=self.export_frame)
-        self.btn_export.pack(fill=tk.X, pady=2)
+        self.btn_export_menu = ttk.Button(export_frame, text="Export...", command=self.show_export_menu)
+        self.btn_export_menu.pack(fill=tk.X, pady=2)
 
         footer = ttk.Frame(sidebar)
         footer.pack(side=tk.BOTTOM, fill=tk.X, pady=(8, 0))
@@ -247,6 +243,17 @@ class SKDDashboard(tk.Tk):
         self.canvas.bind("<Configure>", self.on_canvas_resize)
     def on_check_updates(self):
         messagebox.showinfo("Updates", "v0.0.1\nNo update source configured.")
+    def show_export_menu(self):
+        menu = tk.Menu(self, tearoff=0)
+        menu.add_command(label="Export CSV (current)", command=self.export_video_csv)
+        menu.add_command(label="Export CSV (all files)", command=self.export_video_csv_all)
+        menu.add_command(label="Save frame image (JPG)", command=self.export_frame)
+        try:
+            x = self.btn_export_menu.winfo_rootx()
+            y = self.btn_export_menu.winfo_rooty() + self.btn_export_menu.winfo_height()
+            menu.tk_popup(x, y)
+        finally:
+            menu.grab_release()
     def _reset_tracking(self):
         self.tracked_objects = OrderedDict()
         self.next_track_id = 1
@@ -269,7 +276,7 @@ class SKDDashboard(tk.Tk):
         idx_str = f" ({self.batch_index+1}/{total})" if total else ""
         if hasattr(self, "lbl_file"):
             label_name = "none" if name == "(none)" else f"{name}{idx_str}"
-            self.lbl_file.configure(text=f"Data source: {label_name}")
+            self.lbl_file.configure(text=label_name)
         self._update_apply_labels()
     def _update_apply_labels(self):
         if not hasattr(self, "btn_apply_current") or not hasattr(self, "btn_apply_all"):
