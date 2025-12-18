@@ -4,6 +4,34 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Resources/FileSDK-2024.7.1.dist-info/INSTALLER</key>
+		<data>
+		16AxQdXWseiLa1nvCLZoHfISxZk=
+		</data>
+		<key>Resources/FileSDK-2024.7.1.dist-info/METADATA</key>
+		<data>
+		mRe4wuRaSmoanxqxNo3MMTJgNfI=
+		</data>
+		<key>Resources/FileSDK-2024.7.1.dist-info/RECORD</key>
+		<data>
+		qWOnMtevC1TkxfAcE67p+aPDolY=
+		</data>
+		<key>Resources/FileSDK-2024.7.1.dist-info/REQUESTED</key>
+		<data>
+		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		</data>
+		<key>Resources/FileSDK-2024.7.1.dist-info/WHEEL</key>
+		<data>
+		pT14M2RVQZoPaSw+4i6evh4+Nls=
+		</data>
+		<key>Resources/FileSDK-2024.7.1.dist-info/direct_url.json</key>
+		<data>
+		lpT4nOnVU6WVOPtaLd93Lg23sEo=
+		</data>
+		<key>Resources/FileSDK-2024.7.1.dist-info/top_level.txt</key>
+		<data>
+		vVMUFzbp+qIlqTrIdFHmssTagGg=
+		</data>
 		<key>Resources/FlirMovieReader.m</key>
 		<data>
 		agBXq7KMDnzCP1tYdelYLBusWHk=
@@ -1254,7 +1282,7 @@
 		</data>
 		<key>Resources/base_library.zip</key>
 		<data>
-		3G18TzFyVCwt/lShlunLt2q57xM=
+		uyLdICcLBEkB/ppeje0+Mk1H/es=
 		</data>
 		<key>Resources/cv2/__init__.py</key>
 		<data>
@@ -1303,6 +1331,10 @@
 		<key>Resources/cv2/version.py</key>
 		<data>
 		TcRy8441LgFj+sj/HyrgFye5C34=
+		</data>
+		<key>Resources/fnv/__init__.py</key>
+		<data>
+		oQdONX1n6SDxu/OEV7C7cMnzWgQ=
 		</data>
 		<key>Resources/fnvfilenetExample</key>
 		<data>
@@ -1399,6 +1431,11 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/FileSDK-2024.7.1.dist-info</key>
+		<dict>
+			<key>symlink</key>
+			<string>../Resources/FileSDK-2024.7.1.dist-info</string>
+		</dict>
 		<key>Frameworks/FlirMovieReader.m</key>
 		<dict>
 			<key>symlink</key>
@@ -2322,6 +2359,11 @@
 			<key>symlink</key>
 			<string>../../Resources/cv2/version.py</string>
 		</dict>
+		<key>Frameworks/fnv/__init__.py</key>
+		<dict>
+			<key>symlink</key>
+			<string>../../Resources/fnv/__init__.py</string>
+		</dict>
 		<key>Frameworks/fnv/_fnv.cpython-312-darwin.so</key>
 		<dict>
 			<key>cdhash</key>
@@ -2385,6 +2427,24 @@
 			<key>requirement</key>
 			<string>cdhash H"13815c857aaf3755240aec4df4e631eb8b6040bd"</string>
 		</dict>
+		<key>Frameworks/fnv/_lib/libusb-1.0.0.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			qRqQkmw+f3Coshz5Pf+9lxlq4Eo=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"a91a90926c3e7f70a8b21cf93dffbd97196ae04a"</string>
+		</dict>
+		<key>Frameworks/fnv/_lib/libuvc.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			YJxGkIL6cRrFZodqxUKWaCyIp/c=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"609c469082fa711ac566876ac54296682c88a7f7"</string>
+		</dict>
 		<key>Frameworks/fnv/file.cpython-312-darwin.so</key>
 		<dict>
 			<key>cdhash</key>
@@ -2393,6 +2453,15 @@
 			</data>
 			<key>requirement</key>
 			<string>cdhash H"716ec04a9d6f57ff06ade57a4a9d9142b5baaba9"</string>
+		</dict>
+		<key>Frameworks/fnv/reduce.cpython-312-darwin.so</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			m/dLOQsLsk4rzSOL0GprG5kKsyI=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"9bf74b390b0bb24e2bcd238bd06a6b1b990ab322"</string>
 		</dict>
 		<key>Frameworks/fnvfileExample</key>
 		<dict>
@@ -2812,6 +2881,11 @@
 		<dict>
 			<key>symlink</key>
 			<string>cv2/.dylibs/libunistring.5.dylib</string>
+		</dict>
+		<key>Frameworks/libusb-1.0.0.dylib</key>
+		<dict>
+			<key>symlink</key>
+			<string>fnv/_lib/libusb-1.0.0.dylib</string>
 		</dict>
 		<key>Frameworks/libvmaf.3.dylib</key>
 		<dict>
@@ -3485,6 +3559,55 @@
 		<dict>
 			<key>symlink</key>
 			<string>../Resources/tcl8</string>
+		</dict>
+		<key>Resources/FileSDK-2024.7.1.dist-info/INSTALLER</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zuuue4knoyJ+UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg=
+			</data>
+		</dict>
+		<key>Resources/FileSDK-2024.7.1.dist-info/METADATA</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MpZLZVttqSmf0FIG/j8IIxHYw2/SFZooX6WADkyGwZ8=
+			</data>
+		</dict>
+		<key>Resources/FileSDK-2024.7.1.dist-info/RECORD</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xGvgOgaoC8abVcgaKWqhkGM05C04+rb/NnSetOTcXtI=
+			</data>
+		</dict>
+		<key>Resources/FileSDK-2024.7.1.dist-info/REQUESTED</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			</data>
+		</dict>
+		<key>Resources/FileSDK-2024.7.1.dist-info/WHEEL</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BmjE6hJLRwkclIK+Vr252qQ8Y5+5xzYsDMuV98XhfUw=
+			</data>
+		</dict>
+		<key>Resources/FileSDK-2024.7.1.dist-info/direct_url.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			m//eu/FB61smFy7VLBuo/2bgpyHxv/MEIuzmWCdN+8Y=
+			</data>
+		</dict>
+		<key>Resources/FileSDK-2024.7.1.dist-info/top_level.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zLtydRrupBVFOT2+DY4GFgSW1PKJDnxK0eFBVqTxPUU=
+			</data>
 		</dict>
 		<key>Resources/FlirMovieReader.m</key>
 		<dict>
@@ -5834,7 +5957,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			q4LMF0pboxw2sxMkrlLj8UYif9TsIn+uUH7heCzcY7I=
+			I95OqIGzDuJtu//HxWVwUSib0n6xyExYW7Fx5otsTYQ=
 			</data>
 		</dict>
 		<key>Resources/cv2/.dylibs</key>
@@ -5931,10 +6054,32 @@
 			Z5AB6EB8NKiMcFYzT9AgjGAdwZ9+HGJQSt0WSntf02Y=
 			</data>
 		</dict>
-		<key>Resources/fnv</key>
+		<key>Resources/fnv/__init__.py</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Junbb0Sld54Bl2lL3OMCRdcAXmpU8uvJm6ytlMT2kq0=
+			</data>
+		</dict>
+		<key>Resources/fnv/_fnv.cpython-312-darwin.so</key>
 		<dict>
 			<key>symlink</key>
-			<string>../Frameworks/fnv</string>
+			<string>../../Frameworks/fnv/_fnv.cpython-312-darwin.so</string>
+		</dict>
+		<key>Resources/fnv/_lib</key>
+		<dict>
+			<key>symlink</key>
+			<string>../../Frameworks/fnv/_lib</string>
+		</dict>
+		<key>Resources/fnv/file.cpython-312-darwin.so</key>
+		<dict>
+			<key>symlink</key>
+			<string>../../Frameworks/fnv/file.cpython-312-darwin.so</string>
+		</dict>
+		<key>Resources/fnv/reduce.cpython-312-darwin.so</key>
+		<dict>
+			<key>symlink</key>
+			<string>../../Frameworks/fnv/reduce.cpython-312-darwin.so</string>
 		</dict>
 		<key>Resources/fnvfileExample</key>
 		<dict>
@@ -6321,6 +6466,11 @@
 		<dict>
 			<key>symlink</key>
 			<string>cv2/.dylibs/libunistring.5.dylib</string>
+		</dict>
+		<key>Resources/libusb-1.0.0.dylib</key>
+		<dict>
+			<key>symlink</key>
+			<string>fnv/_lib/libusb-1.0.0.dylib</string>
 		</dict>
 		<key>Resources/libvmaf.3.dylib</key>
 		<dict>

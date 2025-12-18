@@ -29,7 +29,7 @@ elif [[ -n "${FLIR_SDK_PYTHON_DIR:-}" ]]; then
   fi
 fi
 
-opts=(--windowed --onedir --name "$APP_NAME" "$ENTRY")
+opts=(--windowed --onedir --name "$APP_NAME" --collect-all fnv "$ENTRY")
 
 if [[ -n "${FLIR_SDK_LIB_DIR:-}" ]]; then
   opts+=(--add-binary "${FLIR_SDK_LIB_DIR}/*:./")
