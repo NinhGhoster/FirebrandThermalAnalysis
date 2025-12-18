@@ -14,7 +14,7 @@ $Entry = "SDK_dashboard.py"
 $Python = $env:PYTHON_BIN
 if (-not $Python) { $Python = "python" }
 
-$opts = @("--windowed","--onedir","--name",$AppName,$Entry)
+$opts = @("--windowed","--onedir","--name",$AppName,"--collect-all","fnv",$Entry)
 
 if ($env:FLIR_SDK_WHEEL) {
   & $Python -m pip install $env:FLIR_SDK_WHEEL
