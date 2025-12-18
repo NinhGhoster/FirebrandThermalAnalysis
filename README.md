@@ -38,14 +38,18 @@ Builds must be done on the target OS with FLIR SDK installed.
 pip install pyinstaller
 ./build/build_macos.sh
 ```
-Optional: set `FLIR_SDK_LIB_DIR`/`FLIR_SDK_BIN_DIR` to bundle SDK dylibs.
+Optional: set `FLIR_SDK_WHEEL` to a prebuilt SDK wheel, or set `FLIR_SDK_PYTHON_DIR`
+and `FLIR_SDK_SHADOW_DIR` to build a wheel per the FLIR SDK redistribution docs.
+You can also set `FLIR_SDK_LIB_DIR`/`FLIR_SDK_BIN_DIR` to bundle SDK dylibs.
 
 ### Windows
 ```powershell
 pip install pyinstaller
 .\build\build_windows.ps1
 ```
-Optional: set `FLIR_SDK_LIB_DIR`/`FLIR_SDK_BIN_DIR` to bundle SDK DLLs.
+Optional: set `FLIR_SDK_WHEEL` to a prebuilt SDK wheel, or set `FLIR_SDK_PYTHON_DIR`
+and `FLIR_SDK_SHADOW_DIR` to build a wheel per the FLIR SDK redistribution docs.
+You can also set `FLIR_SDK_LIB_DIR`/`FLIR_SDK_BIN_DIR` to bundle SDK DLLs.
 
 ## Package Installers
 
