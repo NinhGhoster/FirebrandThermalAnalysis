@@ -1,4 +1,4 @@
-# FirebrandThermalAnalysis
+# Firebrand Thermal Analysis
 Thermal firebrand detection and tracking dashboard for FLIR SDK SEQ files.
 
 ## Features
