@@ -38,12 +38,12 @@ conda env update -f environment.yml --prune
 
 ## Using the Dashboard
 ### Open SEQ files
-- **Open SEQ file...** supports one file, multiple files, or a folder of SEQ files.
+- **Open** loads one file, multiple files, or a folder of SEQ files.
 - When a folder is selected, all `.seq` files are loaded in sorted order.
 - Use **<< / >>** to switch the current view.
 
 ### Playback
-- **|<** rewinds to frame 1, **>** toggles play/pause, **< / >>** step frames, and the frame slider scrubs.
+- **>** toggles play/pause, **< / >>** step frames, and the frame slider scrubs.
 - Keyboard: `Space` toggles play/pause, `Left`/`Right` or `,`/`.` steps frames.
 
 ### Export settings
