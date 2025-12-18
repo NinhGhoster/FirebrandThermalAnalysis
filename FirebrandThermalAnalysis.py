@@ -209,7 +209,7 @@ class SKDDashboard(tk.Tk):
         self.btn_set_end = ttk.Button(rf_btns, text="Set end", command=self.set_export_end)
         self.btn_set_end.pack(side=tk.LEFT, expand=True, fill=tk.X, padx=1)
 
-        roi_group = ttk.LabelFrame(cfg, text="Region of interest")
+        roi_group = ttk.LabelFrame(cfg, text="Region of Interest")
         roi_group.pack(fill=tk.X, padx=6, pady=6)
 
         roi_tabs = ttk.Notebook(roi_group, style="ROI.TNotebook")
@@ -250,7 +250,7 @@ class SKDDashboard(tk.Tk):
         auto_row = ttk.Frame(auto_tab)
         auto_row.pack(fill=tk.X, padx=4, pady=2)
         ttk.Label(auto_row, text="Margin (px):").pack(side=tk.LEFT)
-        self.var_auto_margin = tk.IntVar(value=20)
+        self.var_auto_margin = tk.IntVar(value=180)
         ttk.Entry(auto_row, width=6, textvariable=self.var_auto_margin).pack(side=tk.LEFT, padx=(4, 8))
         ttk.Button(auto_tab, text="Auto-detect ROI", command=self.detect_auto_roi).pack(fill=tk.X, padx=4, pady=4)
         self.lbl_auto_result = ttk.Label(auto_tab, text="Auto ROI: (not set)", style="Muted.TLabel")
