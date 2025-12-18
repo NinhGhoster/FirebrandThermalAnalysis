@@ -89,23 +89,21 @@ class SKDDashboard(tk.Tk):
         content.pack(side=tk.RIGHT, expand=True, fill=tk.BOTH, padx=(6, 10), pady=10)
 
         # Data source
-        file_frame = ttk.LabelFrame(sidebar, text="Data source")
-        file_frame.pack(fill=tk.X, pady=6)
-        file_row = ttk.Frame(file_frame)
+        self.file_frame = ttk.LabelFrame(sidebar, text="Data source (none)")
+        self.file_frame.pack(fill=tk.X, pady=6)
+        file_row = ttk.Frame(self.file_frame)
         file_row.pack(fill=tk.X, pady=2)
         self.btn_open = ttk.Button(file_row, text="Open", command=self.on_open)
         self.btn_open.pack(side=tk.LEFT, expand=True, fill=tk.X, padx=1)
         ttk.Button(file_row, text="<<", command=self.on_prev_file).pack(side=tk.LEFT, expand=True, fill=tk.X, padx=1)
         ttk.Button(file_row, text=">>", command=self.on_next_file).pack(side=tk.LEFT, expand=True, fill=tk.X, padx=1)
-        self.lbl_file = ttk.Label(file_frame, text="(none)", wraplength=280)
-        self.lbl_file.pack(anchor=tk.W, pady=(4, 2))
 
         # Playback
         playback_frame = ttk.LabelFrame(sidebar, text="Playback")
         playback_frame.pack(fill=tk.X, pady=6)
         playback = ttk.Frame(playback_frame)
         playback.pack(fill=tk.X, pady=2)
-        self.btn_play = ttk.Button(playback, text=">", command=self.on_play_pause)
+        self.btn_play = ttk.Button(playback, text="Play/Pause", command=self.on_play_pause)
         self.btn_play.pack(side=tk.LEFT, padx=1, fill=tk.X, expand=True)
         self.btn_prev = ttk.Button(playback, text="<", command=self.on_prev)
         self.btn_prev.pack(side=tk.LEFT, padx=1, fill=tk.X, expand=True)
@@ -271,12 +269,11 @@ class SKDDashboard(tk.Tk):
         self.var_export_end.set(frame_num)
         self._update_range_button_labels()
     def _update_file_label(self):
-        name = os.path.basename(self.seq_path) if self.seq_path else "(none)"
         total = len(self.batch_paths)
-        idx_str = f" ({self.batch_index+1}/{total})" if total else ""
-        if hasattr(self, "lbl_file"):
-            label_name = "none" if name == "(none)" else f"{name}{idx_str}"
-            self.lbl_file.configure(text=label_name)
+        name = os.path.basename(self.seq_path) if self.seq_path else "none"
+        idx_str = f" {self.batch_index+1}/{total}" if total else ""
+        if hasattr(self, "file_frame"):
+            self.file_frame.configure(text=f"Data source ({name}{idx_str})")
         self._update_apply_labels()
     def _update_apply_labels(self):
         if not hasattr(self, "btn_apply_current") or not hasattr(self, "btn_apply_all"):

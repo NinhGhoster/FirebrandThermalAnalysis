@@ -43,7 +43,7 @@ conda env update -f environment.yml --prune
 - Use **<< / >>** to switch the current view.
 
 ### Playback
-- **>** toggles play/pause, **< / >>** step frames, and the frame slider scrubs.
+- **Play/Pause** toggles play/pause, **< / >** step frames, and the frame slider scrubs.
 - Keyboard: `Space` toggles play/pause, `Left`/`Right` or `,`/`.` steps frames.
 
 ### Export settings
