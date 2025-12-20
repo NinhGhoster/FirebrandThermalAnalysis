@@ -1,5 +1,5 @@
 # Firebrand Thermal Analysis
-Firebrand Thermal Analysis dashboard for FLIR Science File SDK SEQ files.
+Firebrand Thermal Analysis dashboard for FLIR SEQ files.
 
 ## Highlights
 - Open one SEQ, multiple SEQs, or a folder of SEQ files in a single flow.
