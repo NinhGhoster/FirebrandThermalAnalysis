@@ -33,7 +33,7 @@
 ## Package Installers
 - macOS: `./build/package_macos_dmg.sh`
 - Windows: `.\build\package_windows.ps1` (requires Inno Setup)
-- Linux: `./build/package_linux_appimage.sh` (requires `appimagetool`)
+- Linux: `./build/package_linux_appimage.sh` (requires `appimagetool`; includes a default icon)
 
 ## Lint/Test
 - Syntax: `python -m py_compile *.py`

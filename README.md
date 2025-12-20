@@ -166,6 +166,7 @@ Install `appimagetool`, then run:
 ```bash
 ./build/package_linux_appimage.sh
 ```
+The script generates a default 256x256 icon for AppImage metadata.
 
 ## Troubleshooting
 - **"FLIR SDK required"**: ensure the SDK wheel is installed and the build uses
