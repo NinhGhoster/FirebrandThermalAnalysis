@@ -11,3 +11,9 @@ venv/
 
 # OS
 .DS_Store
+
+# Build artifacts
+/build/FirebrandThermalAnalysis/
+/build/AppDir/
+/build/_dmg/
+/dist/
