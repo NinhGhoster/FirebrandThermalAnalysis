@@ -120,6 +120,11 @@ Each row is one detected firebrand in a frame.
 Builds must be done on the target OS with FLIR SDK installed.
 PyInstaller is included in `environment.yml`; install it manually if missing.
 
+### GitHub Actions (CI)
+The workflow at `.github/workflows/build.yml` builds macOS, Windows, and Linux
+distributions on demand or when you push a tag like `v0.1.0`.
+Artifacts are uploaded to the workflow run.
+
 ### macOS
 ```bash
 ./build/build_macos.sh

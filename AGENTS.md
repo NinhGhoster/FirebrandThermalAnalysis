@@ -24,6 +24,7 @@
 - macOS: `./build/build_macos.sh`
 - Windows: `.\build\build_windows.ps1`
 - Linux: `./build/build_linux.sh`
+- GitHub Actions: `.github/workflows/build.yml` (runs on `workflow_dispatch` and `v*` tags)
 - Optional env vars:
   - `FLIR_SDK_WHEEL` (preferred) or `FLIR_SDK_PYTHON_DIR` + `FLIR_SDK_SHADOW_DIR`
   - `FLIR_SDK_LIB_DIR` + `FLIR_SDK_BIN_DIR` for SDK runtime libraries

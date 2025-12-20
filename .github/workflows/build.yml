@@ -1,0 +1,90 @@
+name: Build Distributions
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install numpy opencv-python pillow pyinstaller
+          python -m pip install "SDK/FileSDK-2024.7.1-cp312-cp312-macosx_10_14_universal2.whl"
+      - name: Build app
+        run: PYTHON_BIN=python bash build/build_macos.sh
+      - name: Package DMG
+        run: bash build/package_macos_dmg.sh
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-distribution
+          path: |
+            dist/FirebrandThermalAnalysis.app
+            dist/FirebrandThermalAnalysis.dmg
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install numpy opencv-python pillow pyinstaller
+          python -m pip install "SDK/FileSDK-2024.7.1-cp312-cp312-win_amd64.whl"
+      - name: Build app
+        env:
+          PYTHON_BIN: python
+        run: .\build\build_windows.ps1
+        shell: pwsh
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-distribution
+          path: |
+            dist/FirebrandThermalAnalysis
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-tk libgl1 libglib2.0-0 libfuse2
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install numpy opencv-python pillow pyinstaller
+          python -m pip install "SDK/FileSDK-2024.7.1-cp312-cp312-linux_x86_64.whl"
+      - name: Install appimagetool
+        run: |
+          curl -L -o appimagetool https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+          chmod +x appimagetool
+          echo "$PWD" >> "$GITHUB_PATH"
+          echo "APPIMAGE_EXTRACT_AND_RUN=1" >> "$GITHUB_ENV"
+      - name: Build app
+        run: PYTHON_BIN=python bash build/build_linux.sh
+      - name: Package AppImage
+        run: bash build/package_linux_appimage.sh
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-distribution
+          path: |
+            dist/FirebrandThermalAnalysis
+            dist/FirebrandThermalAnalysis.AppImage
