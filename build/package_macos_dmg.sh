@@ -4,7 +4,7 @@ set -euo pipefail
 # Package a macOS DMG from the PyInstaller output.
 # Requires hdiutil (built-in on macOS).
 
-APP_NAME="Firebrand Thermal Analysis"
+APP_NAME="FirebrandThermalAnalysis"
 DIST_DIR="dist/${APP_NAME}"
 APP_BUNDLE="dist/${APP_NAME}.app"
 OUT_DMG="dist/${APP_NAME}.dmg"

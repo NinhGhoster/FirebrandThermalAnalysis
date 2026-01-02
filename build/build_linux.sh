@@ -10,7 +10,7 @@ set -euo pipefail
 # - FLIR_SDK_PYTHON_DIR: FLIR SDK python folder containing setup.py
 # - FLIR_SDK_SHADOW_DIR: shadow dir for wheel build (default: /tmp/flir_sdk_build)
 
-APP_NAME="Firebrand Thermal Analysis"
+APP_NAME="FirebrandThermalAnalysis"
 ENTRY="FirebrandThermalAnalysis.py"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 

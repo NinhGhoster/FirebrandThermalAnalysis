@@ -4,8 +4,7 @@ set -euo pipefail
 # Package a Linux AppImage from the PyInstaller output.
 # Requires appimagetool installed on Linux.
 
-APP_NAME="Firebrand Thermal Analysis"
-EXEC_NAME="${APP_NAME// /\\ }"
+APP_NAME="FirebrandThermalAnalysis"
 DIST_DIR="dist/${APP_NAME}"
 APPDIR="build/AppDir"
 OUT="dist/${APP_NAME}.AppImage"
@@ -27,10 +26,10 @@ EOF
 base64 --decode "$ICON_PATH.b64" > "$ICON_PATH"
 rm -f "$ICON_PATH.b64"
 
-cat > "$APPDIR/AppRun" <<EOF
+cat > "$APPDIR/AppRun" <<'EOF'
 #!/usr/bin/env bash
-HERE="\$(dirname "\$(readlink -f "\$0")")"
-exec "\$HERE/usr/bin/${APP_NAME}/${APP_NAME}" "\$@"
+HERE="$(dirname "$(readlink -f "$0")")"
+exec "$HERE/usr/bin/FirebrandThermalAnalysis/FirebrandThermalAnalysis" "$@"
 EOF
 chmod +x "$APPDIR/AppRun"
 
@@ -38,7 +37,7 @@ cat > "$APPDIR/${APP_NAME}.desktop" <<EOF
 [Desktop Entry]
 Type=Application
 Name=${APP_NAME}
-Exec=${EXEC_NAME}
+Exec=${APP_NAME}
 Icon=${ICON_NAME}
 Terminal=false
 Categories=Utility;
